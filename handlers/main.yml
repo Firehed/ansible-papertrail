@@ -1,0 +1,6 @@
+---
+# handlers file for firehed.papertrail
+- name: Reload Rsyslog
+  service:
+    name: rsyslog
+    state: restarted

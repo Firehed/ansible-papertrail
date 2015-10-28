@@ -1,0 +1,24 @@
+---
+# tasks file for firehed.papertrail
+- assert:
+    that:
+      - papertrail_host is defined
+
+- name: Copy CA bundle
+  copy:
+    src: papertrail-bundle.pem
+    dest: /etc/papertrail-bundle.pem
+
+- name: Install rsyslog-gnutls
+  yum:
+    name: rsyslog-gnutls
+    state: installed
+  notify:
+    - Restart Rsyslog
+
+- name: Configure Papertrail
+  template:
+    src: papertrail.conf.j2
+    dest: /etc/rsyslog.d/01-papertrail.conf
+  notify:
+    - Restart Rsyslog
