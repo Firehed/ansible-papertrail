@@ -23,7 +23,7 @@ Example Playbook
 ----------------
     - hosts: servers
       roles:
-         - role: firehed.papertrail
+         - role: Firehed.papertrail
            papertrail_host: logs.papertrailapp.com:12345
 
 License
