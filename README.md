@@ -1,4 +1,4 @@
-Role Name
+Papertrail Logging Configuration
 =========
 
 This configures remote logging to Papertrail (papertrailapp.com). Secure transmission with TLS will always be set up.
